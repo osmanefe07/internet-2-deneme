@@ -13,6 +13,8 @@ namespace vize.Models
 
         public DbSet<Klasor> Klasors { get; set;}
 
+        public DbSet<UserGroup> UserGroups { get; set; }
+
        
     }
 

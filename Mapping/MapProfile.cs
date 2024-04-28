@@ -15,6 +15,8 @@ namespace vize.Mapping
             CreateMap<AppUser, UserDto>().ReverseMap();
 
            CreateMap<Klasor, KlasorDto>().ReverseMap();
+
+            CreateMap<UserGroup,UserGroupDto> ().ReverseMap();
         }
     }
 }

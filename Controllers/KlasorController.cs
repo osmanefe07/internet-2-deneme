@@ -43,7 +43,7 @@ namespace vize.Controllers
             if (_context.Klasors.Count(c => c.Name == dto.Name) > 0)
             {
                 result.Status = false;
-                result.Message = "Girilen Ürün Adı Kayıtlıdır!";
+                result.Message = "Girilen Dosya Kayıtlıdır!";
                 return result;
             }
             var klasor = _mapper.Map<Klasor>(dto);
@@ -52,7 +52,7 @@ namespace vize.Controllers
             _context.Klasors.Add(klasor);
             _context.SaveChanges();
             result.Status = true;
-            result.Message = "Ürün Eklendi";
+            result.Message = "Dosya Eklendi";
             return result;
         }
 
@@ -64,7 +64,7 @@ namespace vize.Controllers
             if (klasor == null)
             {
                 result.Status = false;
-                result.Message = "Ürün Bulunamadı!";
+                result.Message = "Dosya Bulunamadı!";
                 return result;
             }
             klasor.Name = dto.Name;
@@ -74,7 +74,7 @@ namespace vize.Controllers
             _context.Klasors.Update(klasor);
             _context.SaveChanges();
             result.Status = true;
-            result.Message = "Ürün Düzenlendi";
+            result.Message = "Dosya Düzenlendi";
             return result;
         }
 
@@ -87,13 +87,13 @@ namespace vize.Controllers
             if (klasor == null)
             {
                 result.Status = false;
-                result.Message = "Ürün Bulunamadı!";
+                result.Message = "Dosya Bulunamadı!";
                 return result;
             }
             _context.Klasors.Remove(klasor);
             _context.SaveChanges();
             result.Status = true;
-            result.Message = "Ürün Silindi";
+            result.Message = "Dosya Silindi";
             return result;
         }
     }

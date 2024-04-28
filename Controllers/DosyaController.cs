@@ -43,7 +43,7 @@ namespace vize.Controllers
             if (_context.Dosyas.Count(c => c.Name == dto.Name) > 0)
             {
                 result.Status = false;
-                result.Message = "Girilen Ürün Adı Kayıtlıdır!";
+                result.Message = "Girilen Dosya Kayıtlıdır!";
                 return result;
             }
             var dosya = _mapper.Map<Dosya>(dto);
@@ -52,7 +52,7 @@ namespace vize.Controllers
             _context.Dosyas.Add(dosya);
             _context.SaveChanges();
             result.Status = true;
-            result.Message = "Ürün Eklendi";
+            result.Message = "Dosya Eklendi";
             return result;
         }
 
@@ -64,7 +64,7 @@ namespace vize.Controllers
             if (dosya == null)
             {
                 result.Status = false;
-                result.Message = "Ürün Bulunamadı!";
+                result.Message = "Dosya Bulunamadı!";
                 return result;
             }
             dosya.Name = dto.Name;
@@ -75,7 +75,7 @@ namespace vize.Controllers
             _context.Dosyas.Update(dosya);
             _context.SaveChanges();
             result.Status = true;
-            result.Message = "Ürün Düzenlendi";
+            result.Message = "Dosya Düzenlendi";
             return result;
         }
 
@@ -88,13 +88,13 @@ namespace vize.Controllers
             if (dosya == null)
             {
                 result.Status = false;
-                result.Message = "Ürün Bulunamadı!";
+                result.Message = "Dosya Bulunamadı!";
                 return result;
             }
             _context.Dosyas.Remove(dosya);
             _context.SaveChanges();
             result.Status = true;
-            result.Message = "Ürün Silindi";
+            result.Message = "Dosya Silindi";
             return result;
         }
     }
